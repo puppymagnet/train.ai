@@ -35,11 +35,7 @@ const example_cards: WorkOutCardProps[] = [
 
 const FeaturedWorkouts = () => {
   return (
-    <Box p={'10px'} bgColor={'red'}>
-        <Center>
-            <Heading>Featured Workouts</Heading>
-        </Center>
-        <SimpleGrid columns={3} spacing={4}>
+        <SimpleGrid columns={{ sm: 1, md:2, lg:3}} padding={10} spacing={4}>
             {example_cards.map(example => {
                 return (
                     <WorkoutCard 
@@ -51,8 +47,6 @@ const FeaturedWorkouts = () => {
                 )
             })}
         </SimpleGrid>
-
-    </Box>
   )
 }
 

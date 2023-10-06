@@ -25,11 +25,11 @@ export const WorkoutCard: React.FC<WorkOutCardProps> = ({
     muscles
 }) => {
   return (
-    <Card>
+    <Card borderRadius={10} overflow={'hidden'}>
         <Image src={img}></Image>
         <CardBody>
             <Tag colorScheme='purple'>{muscles.map(muscle => `${muscle}, `)}</Tag>
-            <Heading size={'md'}>{title}</Heading>
+            <Heading size={'2xl'}>{title}</Heading>
             <Text>{desc}</Text>
         </CardBody>
         <CardFooter>
