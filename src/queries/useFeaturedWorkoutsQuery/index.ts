@@ -1,0 +1,1 @@
+export {useFeaturedWorkoutsQuery} from './useFeaturedWorkoutsQuery'
