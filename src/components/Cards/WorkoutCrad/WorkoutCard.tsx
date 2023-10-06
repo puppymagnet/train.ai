@@ -7,7 +7,8 @@ import {
     Badge,
     CardFooter,
     Button ,
-    Tag
+    Tag,
+    HStack
 } from '@chakra-ui/react'
 import React from 'react'
 
@@ -28,7 +29,13 @@ export const WorkoutCard: React.FC<WorkOutCardProps> = ({
     <Card borderRadius={10} overflow={'hidden'}>
         <Image src={img}></Image>
         <CardBody>
-            <Tag colorScheme='purple'>{muscles.map(muscle => `${muscle}, `)}</Tag>
+            <HStack marginY={1}>
+                {muscles.map(muscle => {
+                    return (
+                        <Tag>{muscle}</Tag>
+                    )
+                })}
+            </HStack>
             <Heading size={'2xl'}>{title}</Heading>
             <Text>{desc}</Text>
         </CardBody>
