@@ -5,6 +5,7 @@ import {
     Heading, 
     Text,
     Badge,
+    Box,
     CardFooter,
     Button ,
     Tag,
@@ -27,12 +28,12 @@ export const WorkoutCard: React.FC<WorkOutCardProps> = ({
 }) => {
   return (
     <Card borderRadius={10} overflow={'hidden'}>
-        <Image src={img}></Image>
+        <Image src={img} objectFit={'cover'} height={250}></Image>
         <CardBody>
             <HStack marginY={1}>
                 {muscles.map(muscle => {
                     return (
-                        <Tag>{muscle}</Tag>
+                        <Tag key={muscle}>{muscle}</Tag>
                     )
                 })}
             </HStack>
