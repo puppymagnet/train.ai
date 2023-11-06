@@ -8,10 +8,11 @@ import {
 } from '@chakra-ui/react';
 
 import React from 'react';
-import gymicon from '../../../assets/gymicon.webp';
-import defaultavatar from '../../../assets/defaultavatar.webp';
-import NavMenu, { MenuOption } from './NavMenu';
 import { HamburgerIcon } from '@chakra-ui/icons';
+
+import defaultavatar from '../../../../assets/defaultavatar.webp';
+import NavMenu, { MenuOption } from './NavMenu/NavMenu';
+import NavDropDown from './NavDropDown/NavDropDown';
 
 const NavBar = () => {
 
@@ -52,13 +53,7 @@ const NavBar = () => {
                 />
             </Box>
             <Spacer/>
-            <Box p='4'>
-                <Select placeholder='Choose Workout'>
-                    <option value='Push'>Push</option>
-                    <option value='Pull'>Pull</option>
-                    <option value='Legs'>Legs</option>
-                </Select>
-            </Box>
+            <NavDropDown />
             <Spacer />
             <Box p='4'>
                 <NavMenu 

@@ -17,19 +17,22 @@ const example_cards: WorkOutCardProps[] = [
         title: 'Arnold Push',
         desc: 'A basic push workout building on basic compoinds and principles',
         img: example_push,
-        muscles: ['Chest', 'Triceps', 'Shoulders']
+        muscles: ['Chest', 'Triceps', 'Shoulders'],
+        author_id: 'Thomas Michael',
     },
     {
         title: 'Arnold Pull',
         desc: 'A basic pull workout building on basic compoinds and principles',
         img: example_pull,
-        muscles: ['Back', 'Biceps']
+        muscles: ['Back', 'Biceps'],
+        author_id: 'Thomas Michael'
     },
     {
         title: 'Arnold Legs',
         desc: 'A basic leg workout building on basic compoinds and principles',
         img: example_legs,
-        muscles: ['Quads', 'Hamstrings', 'Calves']
+        muscles: ['Quads', 'Hamstrings', 'Calves'],
+        author_id: 'Thomas Michael'
     },
 ]
 
@@ -43,6 +46,7 @@ const FeaturedWorkouts = () => {
                         desc={example.desc}
                         img={example.img}
                         muscles={example.muscles}
+                        author_id={example.author_id}
                     />
                 )
             })}

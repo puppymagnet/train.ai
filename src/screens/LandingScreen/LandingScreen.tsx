@@ -6,13 +6,12 @@ import {
     Heading
 } from '@chakra-ui/react'
 import React from 'react'
-import FeaturedWorkouts from '../../components/Highlights/FeaturedWorkouts/FeaturedWorkouts'
-
+import FeaturedWorkoutsScreen from './FeaturedWorkoutsScreen/FeaturedWorkoutsScreen'
 
 const LandingScreen = () => {
-  return (
+    return (
     <Box p={'10px'} borderRadius={'lg'}>
-            <FeaturedWorkouts/>
+            <FeaturedWorkoutsScreen/>
     </Box>
   )
 }

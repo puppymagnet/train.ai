@@ -4,27 +4,36 @@ import {
     Image, 
     Heading, 
     Text,
-    Badge,
-    Box,
     CardFooter,
     Button ,
     Tag,
-    HStack
+    HStack,
+    Spacer,
+    Avatar,
+    Tooltip,
+    Flex,
 } from '@chakra-ui/react'
 import React from 'react'
+import defaultavatar from '../../../assets/tmw_avatar.jpg';
+import { muscleMap } from './muscle-map';
 
 export interface WorkOutCardProps {
     title: string;
     desc?: string;
     img?: string; 
     muscles: string[];
+    author_id?: string;
+    score?: number;
+    verified?: boolean;
+    colorScheme?: string;
 }
 
 export const WorkoutCard: React.FC<WorkOutCardProps> = ({
     title,
     desc,
     img,
-    muscles
+    muscles,
+    author_id,
 }) => {
   return (
     <Card borderRadius={10} overflow={'hidden'}>
@@ -33,7 +42,7 @@ export const WorkoutCard: React.FC<WorkOutCardProps> = ({
             <HStack marginY={1}>
                 {muscles.map(muscle => {
                     return (
-                        <Tag key={muscle}>{muscle}</Tag>
+                        <Tag colorScheme={muscleMap[muscle.toLowerCase() as keyof typeof muscleMap]} key={muscle}>{muscle}</Tag>
                     )
                 })}
             </HStack>
@@ -41,10 +50,18 @@ export const WorkoutCard: React.FC<WorkOutCardProps> = ({
             <Text>{desc}</Text>
         </CardBody>
         <CardFooter>
+                <Tooltip label={author_id}>
+                    <Avatar
+                        name='Thomas Michael'
+                        src={defaultavatar}
+                        size={'md'}
+                    />
+                </Tooltip>
+            <Spacer/>
             <Button>View workout details</Button>
         </CardFooter>
     </Card>
   )
 }
 
-export default WorkoutCard
+export default WorkoutCard;
