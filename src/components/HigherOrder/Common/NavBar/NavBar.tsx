@@ -14,6 +14,8 @@ import defaultavatar from '../../../../assets/defaultavatar.webp';
 import NavMenu, { MenuOption } from './NavMenu/NavMenu';
 import NavDropDown from './NavDropDown/NavDropDown';
 
+import { ColorModeSwitcher } from '../../../../ColorModeSwitcher';
+
 const NavBar = () => {
 
   const userAvatar = <Avatar 
@@ -47,10 +49,7 @@ const NavBar = () => {
     <Box>
         <Flex>
             <Box p='4'>
-                <NavMenu 
-                    menuIcon={<HamburgerIcon/>}
-                    menuItems={mainMenuOptions}
-                />
+                <ColorModeSwitcher/>
             </Box>
             <Spacer/>
             <NavDropDown />
